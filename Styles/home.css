@@ -1,0 +1,180 @@
+/* home start*/
+.carousel
+{
+    position: relative;
+    width: 100%;
+    max-width: 70rem;
+    aspect-ratio: 12 / 9.5;
+    overflow: hidden;
+    margin: 0 auto; 
+    margin-top: 10em; 
+    border-radius: 
+    10px; 
+    z-index: 10;
+}
+
+.slides
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slides a
+{
+    color: black;
+    flex: 0 0 100%;
+}
+
+.slides a:hover .slide > div
+{
+    color: #7dc15b;
+}
+
+.slide
+{
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    transition: 150ms ease;
+}
+
+.slide img
+{
+    width: 100%;
+}
+
+.slide > div
+{
+    box-sizing: border-box;
+    flex-grow: 1;
+    background-color: white;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide > div h1
+{
+
+  font-size: clamp(1.6rem, 2vw, 2.2rem); 
+  font-weight: 600;
+  text-align: center;
+  word-break: break-word;
+}
+
+.arrow
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.2); 
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.arrow:hover
+{
+    background-color: rgb(237, 237, 237);
+    color: black;
+}
+
+.arrow.left 
+{
+    left: 20px;
+}
+
+.arrow.right 
+{
+    right: 20px;
+}
+/* home end */
+
+
+/*  article start */
+.articles .article
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 2rem;
+    text-transform: capitalize;
+}
+
+.articles .article-box
+{
+    background-color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+    min-height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.articles .article-box img
+{
+    width: 100%;
+    object-fit: cover;
+}
+
+.articles h1
+{
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.articles .article a
+{
+    color: black;
+    font-size: 1.5rem;
+}
+
+.articles .article a:hover
+{
+    color: #7dc15b;
+}
+
+.articles .article .article-box .title
+{
+    padding: 0.2rem 2rem 3rem 2rem;
+}
+
+/* article end */
+
+/* 📱 Mobile Fixes */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.8rem 2rem;  /* less padding on mobile */
+    }
+
+    .carousel {
+        max-width: 100%;  /* take full width */
+        margin: 0;        /* remove center gap */
+        margin-top: 2rem;
+        border-radius: 0; /* no cut corners on mobile */
+    }
+
+    section {
+        padding: 2rem 1.5rem; /* give breathing room */
+    }
+
+    .articles .article {
+        grid-template-columns: 1fr; /* single column */
+        gap: 1.5rem;
+    }
+}
